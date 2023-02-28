@@ -34,7 +34,7 @@ function App() {
       }
       else {
         setIsLoading(true)
-        const { data } = await requestQuery(selectOption, search.replaceAll("&", "and"), page)
+        const { data } = await requestQuery(selectOption, search.replaceAll("&", "and"), 1)
         const { totalPages } = data;
         setPageCount(totalPages)
         setMons(data)
