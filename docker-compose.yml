@@ -13,8 +13,8 @@ services:
     ports:
       - 3000:3000
     volumes:
-      - ./frontend:/usr/src/app
-    working_dir: /usr/src/app
+      - ./frontend:/app
+    working_dir: /app-frontend
     depends_on:
       - backend
     networks:
@@ -32,10 +32,10 @@ services:
     ports:
       - 3001:3001
     volumes:
-      - ./backend:/usr/src/app
-    working_dir: /usr/src/app
+      - ./backend:/app
+    working_dir: /app-backend
     depends_on:
-      - mongodb
+      - mongo_seed
     networks:
       - default
 
